@@ -8,7 +8,15 @@ entryPoints:
     address: ":80"
     transport:
       respondingTimeouts:
+        readTimeout: 0s
+        writeTimeout: 0s
         idleTimeout: 600s
+
+serversTransport:
+  forwardingTimeouts:
+    dialTimeout: 30s
+    responseHeaderTimeout: 0s
+    idleConnTimeout: 0s
 
 ping:
   entryPoint: web
