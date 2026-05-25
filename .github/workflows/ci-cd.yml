@@ -1,0 +1,22 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and push
+        run: |
+          set -euo pipefail
+          SHA_TAG="${REGISTRY}/traefik:${{ github.sha }}"
+          STAGING_TAG="${REGISTRY}/traefik:staging"
+          docker build -t "$SHA_TAG" -t "$STAGING_TAG" .
+          docker push "$SHA_TAG"
+          docker push "$STAGING_TAG"

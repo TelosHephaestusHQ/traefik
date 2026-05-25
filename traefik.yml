@@ -1,0 +1,14 @@
+providers:
+  docker:
+    network: traefik
+    exposedByDefault: false
+
+entryPoints:
+  web:
+    address: ":80"
+    transport:
+      respondingTimeouts:
+        idleTimeout: 600s
+
+ping:
+  entryPoint: web

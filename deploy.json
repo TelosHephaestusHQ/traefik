@@ -1,0 +1,12 @@
+{
+  "port": 80,
+  "ports": ["80:80"],
+  "docker_socket": true,
+  "registers": false,
+  "placement": ["any"],
+  "repo": "TelosHephaestusHQ/traefik",
+  "healthcheck": {
+    "type": "http",
+    "target": "/ping"
+  }
+}
