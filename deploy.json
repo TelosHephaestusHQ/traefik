@@ -5,7 +5,7 @@
   "registers": false,
   "placement": ["any"],
   "repo": "TelosHephaestusHQ/traefik",
-  "secrets": ["DYNADOT_API_KEY", "DYNADOT_API_SECRET"],
+  "secrets": ["CLOUDFLARE_DNS_API_TOKEN", "CLOUDFLARE_ZONE_ID"],
   "volumes": [
     {"host": "/data/traefik/acme", "container": "/acme"}
   ],

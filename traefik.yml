@@ -31,7 +31,7 @@ certificatesResolvers:
       email: falonofthetower@gmail.com
       storage: /acme/acme.json
       dnsChallenge:
-        provider: dynadot
+        provider: cloudflare
 
 ping:
   entryPoint: websecure
